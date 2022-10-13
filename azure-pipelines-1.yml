@@ -1,34 +1,44 @@
-# ASP.NET Core (.NET Framework)
-# Build and test ASP.NET Core projects targeting the full .NET Framework.
-# Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+# # ASP.NET Core (.NET Framework)
+# # Build and test ASP.NET Core projects targeting the full .NET Framework.
+# # Add steps that publish symbols, save build artifacts, and more:
+# # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- master
+- main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
 variables:
   solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  dotNetFramework: 'net6.0'
+  dotNetVersion: '6.0.x'
+  targetRuntime: 'linux-x64'
 
 steps:
 - task: NuGetToolInstaller@1
+- task: UseDotNet@2
+  inputs:
+    version: $(dotNetVersion)
+    includePreviewVersions: true
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'Build .NET 6 Application'
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
+# Publish it as .NET 6 self-contained application for linux runtime
+- task: DotNetCoreCLI@2
   inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
 
-- task: VSTest@2
+# Package the file and uploads them as an artifact of the build
+- task: PublishPipelineArtifact@1
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    targetPath: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'WareHouseAPI'
