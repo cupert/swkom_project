@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Corp.Prod.BusinessLogic.Interfaces
 {
-    internal interface IRecipientLogic
+    public interface IRecipientLogic
     {
     }
 }

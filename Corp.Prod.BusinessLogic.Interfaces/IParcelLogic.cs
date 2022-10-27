@@ -8,5 +8,6 @@ namespace Corp.Prod.BusinessLogic.Interfaces
 {
     public interface IParcelLogic
     {
+
     }
 }
