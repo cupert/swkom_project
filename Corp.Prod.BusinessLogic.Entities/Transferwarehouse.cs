@@ -22,7 +22,7 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// 
     /// </summary>
     [DataContract]
-    public partial class Transferwarehouse 
+    public partial class Transferwarehouse : Hop
     {
         /// <summary>
         /// GeoJSON (https://geojson.org/) of the area covered by the logistics partner.

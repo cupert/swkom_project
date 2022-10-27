@@ -17,18 +17,9 @@ namespace Corp.Prod.Area.Sub.DTOs
                 .ReverseMap();
 
             CreateMap<Hop, BusinessLogic.Entities.Hop>()
-                .ReverseMap();
-
-            CreateMap<HopArrival, BusinessLogic.Entities.HopArrival>()
-                .ReverseMap();
-
-            CreateMap<Parcel, BusinessLogic.Entities.Parcel>()
-                .ReverseMap();
-
-            CreateMap<TrackingInformation, BusinessLogic.Entities.Parcel>()
-                .ReverseMap();
-
-            CreateMap<Recipient, BusinessLogic.Entities.Recipient>()
+                .Include<Transferwarehouse, BusinessLogic.Entities.Transferwarehouse>()
+                .Include<Truck, BusinessLogic.Entities.Truck>()
+                .Include<Warehouse, BusinessLogic.Entities.Warehouse>()
                 .ReverseMap();
 
             CreateMap<Transferwarehouse, BusinessLogic.Entities.Transferwarehouse>()
@@ -39,6 +30,28 @@ namespace Corp.Prod.Area.Sub.DTOs
 
             CreateMap<Warehouse, BusinessLogic.Entities.Warehouse>()
                 .ReverseMap();
+
+            CreateMap<HopArrival, BusinessLogic.Entities.HopArrival>()
+                .ReverseMap();
+
+            CreateMap<Parcel, BusinessLogic.Entities.Parcel>()
+                .ForMember(destinationMember => destinationMember.Recipient, opt => opt.MapFrom(src => src.Recipient))
+                .ForMember(destinationMember => destinationMember.Weight, opt => opt.MapFrom(src => src.Weight))
+                .ForMember(destinationMember => destinationMember.Sender, opt => opt.MapFrom(src => src.Sender))
+                .ReverseMap();
+
+            CreateMap<NewParcelInfo, BusinessLogic.Entities.Parcel>()
+                .ForMember(destinationMember => destinationMember.TrackingId, opt => opt.MapFrom(src => src.TrackingId))
+                .ReverseMap();
+
+            CreateMap<TrackingInformation, BusinessLogic.Entities.Parcel>()
+                .ForMember(destinationMember => destinationMember.State, opt => opt.MapFrom(src => src.State))
+                .ForMember(destinationMember => destinationMember.VisitedHops, opt => opt.MapFrom(src => src.VisitedHops))
+                .ForMember(destinationMember => destinationMember.FutureHops, opt => opt.MapFrom(src => src.FutureHops))
+                .ReverseMap();
+
+            CreateMap<Recipient, BusinessLogic.Entities.Recipient>()
+                .ReverseMap();           
 
             CreateMap<WarehouseNextHops, BusinessLogic.Entities.WarehouseNextHops>()
                 .ReverseMap();

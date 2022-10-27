@@ -22,7 +22,7 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// 
     /// </summary>
     [DataContract]
-    public partial class Warehouse 
+    public partial class Warehouse : Hop
     {
         /// <summary>
         /// Gets or Sets Level

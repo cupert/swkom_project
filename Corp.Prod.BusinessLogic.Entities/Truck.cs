@@ -23,7 +23,7 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// 
     /// </summary>
     [DataContract]
-    public partial class Truck 
+    public partial class Truck : Hop
     {
         /// <summary>
         /// GeoJSON (https://geojson.org/) of the area covered by the truck.
