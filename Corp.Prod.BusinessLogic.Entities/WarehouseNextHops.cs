@@ -15,6 +15,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Corp.Prod.Area.Sub.Converters;
 
 namespace Corp.Prod.BusinessLogic.Entities
 { 
@@ -22,22 +24,21 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// 
     /// </summary>
     [DataContract]
-    public partial class Warehouse 
+    public partial class WarehouseNextHops 
     {
         /// <summary>
-        /// Gets or Sets Level
+        /// Gets or Sets TraveltimeMins
         /// </summary>
         [Required]
-        [DataMember(Name="level", EmitDefaultValue=true)]
-        public int Level { get; set; }
+        [DataMember(Name="traveltimeMins", EmitDefaultValue=true)]
+        public int TraveltimeMins { get; set; }
 
         /// <summary>
-        /// Next hops after this warehouse (warehouses or trucks).
+        /// Gets or Sets Hop
         /// </summary>
-        /// <value>Next hops after this warehouse (warehouses or trucks).</value>
         [Required]
-        [DataMember(Name="nextHops", EmitDefaultValue=false)]
-        public List<WarehouseNextHops> NextHops { get; set; }
+        [DataMember(Name="hop", EmitDefaultValue=false)]
+        public Hop Hop { get; set; }
 
     }
 }

@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace Corp.Prod.BusinessLogic.Entities
 { 
@@ -22,22 +23,23 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// 
     /// </summary>
     [DataContract]
-    public partial class Warehouse 
+    public partial class GeoCoordinate 
     {
         /// <summary>
-        /// Gets or Sets Level
+        /// Latitude of the coordinate.
         /// </summary>
+        /// <value>Latitude of the coordinate.</value>
         [Required]
-        [DataMember(Name="level", EmitDefaultValue=true)]
-        public int Level { get; set; }
+        [DataMember(Name="lat", EmitDefaultValue=true)]
+        public double Lat { get; set; }
 
         /// <summary>
-        /// Next hops after this warehouse (warehouses or trucks).
+        /// Longitude of the coordinate.
         /// </summary>
-        /// <value>Next hops after this warehouse (warehouses or trucks).</value>
+        /// <value>Longitude of the coordinate.</value>
         [Required]
-        [DataMember(Name="nextHops", EmitDefaultValue=false)]
-        public List<WarehouseNextHops> NextHops { get; set; }
+        [DataMember(Name="lon", EmitDefaultValue=true)]
+        public double Lon { get; set; }
 
     }
 }

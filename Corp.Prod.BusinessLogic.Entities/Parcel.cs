@@ -15,7 +15,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using Corp.Prod.BusinessLogic.Interfaces;
 
 namespace Corp.Prod.BusinessLogic.Entities
 { 
@@ -23,7 +22,7 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// 
     /// </summary>
     [DataContract]
-    public partial class Parcel:IParcelLogic
+    public partial class Parcel
     {
         /// <summary>
         /// Gets or Sets Weight

@@ -16,7 +16,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Corp.Prod.BusinessLogic.Entities;
-using Corp.Prod.BusinessLogic.Interfaces;
 
 namespace Corp.Prod.BusinessLogic.Entities
 { 
@@ -24,7 +23,7 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// 
     /// </summary>
     [DataContract]
-    public partial class Truck : ITruckLogic
+    public partial class Truck 
     {
         /// <summary>
         /// GeoJSON (https://geojson.org/) of the area covered by the truck.
