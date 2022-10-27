@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using Corp.Prod.BusinessLogic.Entities;
+using Newtonsoft.Json;
 
 namespace Corp.Prod.BusinessLogic.Entities
 { 
@@ -23,23 +23,23 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// 
     /// </summary>
     [DataContract]
-    public partial class Truck : Hop
+    public partial class GeoCoordinate 
     {
         /// <summary>
-        /// GeoJSON (https://geojson.org/) of the area covered by the truck.
+        /// Latitude of the coordinate.
         /// </summary>
-        /// <value>GeoJSON (https://geojson.org/) of the area covered by the truck.</value>
+        /// <value>Latitude of the coordinate.</value>
         [Required]
-        [DataMember(Name="regionGeoJson", EmitDefaultValue=false)]
-        public string RegionGeoJson { get; set; }
+        [DataMember(Name="lat", EmitDefaultValue=true)]
+        public double Lat { get; set; }
 
         /// <summary>
-        /// The truck&#39;s number plate.
+        /// Longitude of the coordinate.
         /// </summary>
-        /// <value>The truck&#39;s number plate.</value>
+        /// <value>Longitude of the coordinate.</value>
         [Required]
-        [DataMember(Name="numberPlate", EmitDefaultValue=false)]
-        public string NumberPlate { get; set; }
+        [DataMember(Name="lon", EmitDefaultValue=true)]
+        public double Lon { get; set; }
 
     }
 }

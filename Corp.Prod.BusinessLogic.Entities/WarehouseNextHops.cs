@@ -15,7 +15,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using Corp.Prod.BusinessLogic.Entities;
+using Newtonsoft.Json;
+using Corp.Prod.Area.Sub.Converters;
 
 namespace Corp.Prod.BusinessLogic.Entities
 { 
@@ -23,23 +24,21 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// 
     /// </summary>
     [DataContract]
-    public partial class Truck : Hop
+    public partial class WarehouseNextHops 
     {
         /// <summary>
-        /// GeoJSON (https://geojson.org/) of the area covered by the truck.
+        /// Gets or Sets TraveltimeMins
         /// </summary>
-        /// <value>GeoJSON (https://geojson.org/) of the area covered by the truck.</value>
         [Required]
-        [DataMember(Name="regionGeoJson", EmitDefaultValue=false)]
-        public string RegionGeoJson { get; set; }
+        [DataMember(Name="traveltimeMins", EmitDefaultValue=true)]
+        public int TraveltimeMins { get; set; }
 
         /// <summary>
-        /// The truck&#39;s number plate.
+        /// Gets or Sets Hop
         /// </summary>
-        /// <value>The truck&#39;s number plate.</value>
         [Required]
-        [DataMember(Name="numberPlate", EmitDefaultValue=false)]
-        public string NumberPlate { get; set; }
+        [DataMember(Name="hop", EmitDefaultValue=false)]
+        public Hop Hop { get; set; }
 
     }
 }

@@ -100,6 +100,9 @@ namespace Corp.Prod.Area.Sub
                 });
                 services
                     .AddSwaggerGenNewtonsoftSupport();
+
+            services
+                .AddAutoMapper(typeof(Startup));
         }
 
         /// <summary>
