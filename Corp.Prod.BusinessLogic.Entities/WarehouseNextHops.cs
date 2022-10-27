@@ -17,39 +17,28 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Corp.Prod.Area.Sub.Converters;
-using AutoMapper;
 
-namespace Corp.Prod.Area.Sub.DTOs
+namespace Corp.Prod.BusinessLogic.Entities
 { 
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
-    public partial class Parcel 
+    public partial class WarehouseNextHops 
     {
-        private readonly IMapper _mapper;
-        public Parcel(IMapper mapper) => _mapper = mapper;
-
         /// <summary>
-        /// Gets or Sets Weight
+        /// Gets or Sets TraveltimeMins
         /// </summary>
         [Required]
-        [DataMember(Name="weight", EmitDefaultValue=true)]
-        public float Weight { get; set; }
+        [DataMember(Name="traveltimeMins", EmitDefaultValue=true)]
+        public int TraveltimeMins { get; set; }
 
         /// <summary>
-        /// Gets or Sets Recipient
+        /// Gets or Sets Hop
         /// </summary>
         [Required]
-        [DataMember(Name="recipient", EmitDefaultValue=false)]
-        public Recipient Recipient { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Sender
-        /// </summary>
-        [Required]
-        [DataMember(Name="sender", EmitDefaultValue=false)]
-        public Recipient Sender { get; set; }
+        [DataMember(Name="hop", EmitDefaultValue=false)]
+        public Hop Hop { get; set; }
 
     }
 }

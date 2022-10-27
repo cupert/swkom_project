@@ -14,4 +14,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Corp.Prod.BusinessLogic.Interfaces\Corp.Prod.BusinessLogic.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>
