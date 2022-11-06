@@ -18,5 +18,6 @@ namespace Corp.Prod.BusinessLogic
             ParcelValidator validator = new();
             ValidationResult result = validator.Validate(parcel);
         }
+
     }
 }
