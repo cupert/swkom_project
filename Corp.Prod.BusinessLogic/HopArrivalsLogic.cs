@@ -19,5 +19,6 @@ namespace Corp.Prod.BusinessLogic
             HopArrivalValidator validator = new();
             ValidationResult result = validator.Validate(hopArrival);
         }
+
     }
 }

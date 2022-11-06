@@ -9,5 +9,16 @@ namespace Corp.Prod.BusinessLogic
 {
     public class GeoCoordianteLogic : IGeoCoordinateLogic
     {
+        public double testFunction(double lat)
+        {
+            if (double.IsNaN(lat))
+            {
+                return 0.0;
+            }
+            else
+            {
+                return lat;
+            }
+        }
     }
 }
