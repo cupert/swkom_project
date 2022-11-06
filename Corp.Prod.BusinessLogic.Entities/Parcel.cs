@@ -24,6 +24,12 @@ namespace Corp.Prod.BusinessLogic.Entities
     public partial class Parcel
     {
         /// <summary>
+        /// The tracking ID of the parcel. 
+        /// </summary>
+        /// <value>The tracking ID of the parcel. </value>
+        public string TrackingId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Weight
         /// </summary>
         public float Weight { get; set; }
@@ -93,10 +99,6 @@ namespace Corp.Prod.BusinessLogic.Entities
         /// <value>Hops coming up in the future - their times are estimations.</value>
         public List<HopArrival> FutureHops { get; set; }
 
-        /// <summary>
-        /// The tracking ID of the parcel. 
-        /// </summary>
-        /// <value>The tracking ID of the parcel. </value>
-        public string TrackingId { get; set; }
+        
     }
 }

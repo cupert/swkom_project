@@ -29,15 +29,11 @@ namespace Corp.Prod.BusinessLogic.Entities
         /// <summary>
         /// Gets or Sets TraveltimeMins
         /// </summary>
-        [Required]
-        [DataMember(Name="traveltimeMins", EmitDefaultValue=true)]
         public int TraveltimeMins { get; set; }
 
         /// <summary>
         /// Gets or Sets Hop
         /// </summary>
-        [Required]
-        [DataMember(Name="hop", EmitDefaultValue=false)]
         public Hop Hop { get; set; }
 
     }
