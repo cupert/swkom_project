@@ -38,16 +38,30 @@ namespace Corp.Prod.Area.Sub.DTOs
                 .ForMember(destinationMember => destinationMember.Recipient, opt => opt.MapFrom(src => src.Recipient))
                 .ForMember(destinationMember => destinationMember.Weight, opt => opt.MapFrom(src => src.Weight))
                 .ForMember(destinationMember => destinationMember.Sender, opt => opt.MapFrom(src => src.Sender))
+                .ForMember(destinationMember => destinationMember.TrackingId, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.State, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.VisitedHops, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.FutureHops, opt => opt.Ignore())
                 .ReverseMap();
 
             CreateMap<NewParcelInfo, BusinessLogic.Entities.Parcel>()
                 .ForMember(destinationMember => destinationMember.TrackingId, opt => opt.MapFrom(src => src.TrackingId))
+                .ForMember(destinationMember => destinationMember.Recipient, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.Weight, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.Sender, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.State, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.VisitedHops, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.FutureHops, opt => opt.Ignore())
                 .ReverseMap();
 
             CreateMap<TrackingInformation, BusinessLogic.Entities.Parcel>()
                 .ForMember(destinationMember => destinationMember.State, opt => opt.MapFrom(src => src.State))
                 .ForMember(destinationMember => destinationMember.VisitedHops, opt => opt.MapFrom(src => src.VisitedHops))
                 .ForMember(destinationMember => destinationMember.FutureHops, opt => opt.MapFrom(src => src.FutureHops))
+                .ForMember(destinationMember => destinationMember.Recipient, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.Weight, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.Sender, opt => opt.Ignore())
+                .ForMember(destinationMember => destinationMember.TrackingId, opt => opt.Ignore())
                 .ReverseMap();
 
             CreateMap<Recipient, BusinessLogic.Entities.Recipient>()
