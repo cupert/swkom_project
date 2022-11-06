@@ -10,5 +10,10 @@ namespace Corp.Prod.BusinessLogic
 {
     public class TruckLogic : ITruckLogic
     {
+        public bool testFunction(string statement)
+        {
+            if(statement == "NumberPlate") return true;
+            else return false;
+        }
     }
 }

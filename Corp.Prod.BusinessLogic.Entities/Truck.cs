@@ -22,23 +22,18 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// <summary>
     /// 
     /// </summary>
-    [DataContract]
     public partial class Truck : Hop
     {
         /// <summary>
         /// GeoJSON (https://geojson.org/) of the area covered by the truck.
         /// </summary>
         /// <value>GeoJSON (https://geojson.org/) of the area covered by the truck.</value>
-        [Required]
-        [DataMember(Name="regionGeoJson", EmitDefaultValue=false)]
         public string RegionGeoJson { get; set; }
 
         /// <summary>
         /// The truck&#39;s number plate.
         /// </summary>
         /// <value>The truck&#39;s number plate.</value>
-        [Required]
-        [DataMember(Name="numberPlate", EmitDefaultValue=false)]
         public string NumberPlate { get; set; }
 
     }

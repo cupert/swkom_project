@@ -10,5 +10,10 @@ namespace Corp.Prod.BusinessLogic
 {
     public class TranferWarehouseLogic : ITransfarewarehouseLogic
     {
+        public bool testFunction(string statement) 
+        {
+            if (statement == "LogisticsPartnet")  return true; 
+            else return false;
+        }
     }
 }

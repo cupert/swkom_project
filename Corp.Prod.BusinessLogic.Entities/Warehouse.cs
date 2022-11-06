@@ -21,22 +21,17 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// <summary>
     /// 
     /// </summary>
-    [DataContract]
     public partial class Warehouse : Hop
     {
         /// <summary>
         /// Gets or Sets Level
         /// </summary>
-        [Required]
-        [DataMember(Name="level", EmitDefaultValue=true)]
         public int Level { get; set; }
 
         /// <summary>
         /// Next hops after this warehouse (warehouses or trucks).
         /// </summary>
         /// <value>Next hops after this warehouse (warehouses or trucks).</value>
-        [Required]
-        [DataMember(Name="nextHops", EmitDefaultValue=false)]
         public List<WarehouseNextHops> NextHops { get; set; }
 
     }

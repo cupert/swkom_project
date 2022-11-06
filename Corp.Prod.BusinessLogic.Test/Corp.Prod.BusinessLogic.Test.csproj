@@ -27,4 +27,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Corp.Prod.BusinessLogic\Corp.Prod.BusinessLogic.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -21,47 +21,12 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// <summary>
     /// 
     /// </summary>
-    [DataContract]
     public partial class Recipient
     {
-        /// <summary>
-        /// Name of person or company.
-        /// </summary>
-        /// <value>Name of person or company.</value>
-        [Required]
-        [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
-
-        /// <summary>
-        /// Street
-        /// </summary>
-        /// <value>Street</value>
-        [Required]
-        [DataMember(Name="street", EmitDefaultValue=false)]
         public string Street { get; set; }
-
-        /// <summary>
-        /// Postalcode
-        /// </summary>
-        /// <value>Postalcode</value>
-        [Required]
-        [DataMember(Name="postalCode", EmitDefaultValue=false)]
         public string PostalCode { get; set; }
-
-        /// <summary>
-        /// City
-        /// </summary>
-        /// <value>City</value>
-        [Required]
-        [DataMember(Name="city", EmitDefaultValue=false)]
         public string City { get; set; }
-
-        /// <summary>
-        /// Country
-        /// </summary>
-        /// <value>Country</value>
-        [Required]
-        [DataMember(Name="country", EmitDefaultValue=false)]
         public string Country { get; set; }
 
     }
