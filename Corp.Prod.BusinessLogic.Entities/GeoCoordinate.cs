@@ -22,23 +22,18 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// <summary>
     /// 
     /// </summary>
-    [DataContract]
     public partial class GeoCoordinate 
     {
         /// <summary>
         /// Latitude of the coordinate.
         /// </summary>
         /// <value>Latitude of the coordinate.</value>
-        [Required]
-        [DataMember(Name="lat", EmitDefaultValue=true)]
         public double Lat { get; set; }
 
         /// <summary>
         /// Longitude of the coordinate.
         /// </summary>
         /// <value>Longitude of the coordinate.</value>
-        [Required]
-        [DataMember(Name="lon", EmitDefaultValue=true)]
         public double Lon { get; set; }
 
     }

@@ -21,28 +21,21 @@ namespace Corp.Prod.BusinessLogic.Entities
     /// <summary>
     /// 
     /// </summary>
-    [DataContract]
     public partial class Parcel
     {
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [Required]
-        [DataMember(Name="weight", EmitDefaultValue=true)]
         public float Weight { get; set; }
 
         /// <summary>
         /// Gets or Sets Recipient
         /// </summary>
-        [Required]
-        [DataMember(Name="recipient", EmitDefaultValue=false)]
         public Recipient Recipient { get; set; }
 
         /// <summary>
         /// Gets or Sets Sender
         /// </summary>
-        [Required]
-        [DataMember(Name="sender", EmitDefaultValue=false)]
         public Recipient Sender { get; set; }
 
 
@@ -86,32 +79,24 @@ namespace Corp.Prod.BusinessLogic.Entities
         /// State of the parcel.
         /// </summary>
         /// <value>State of the parcel.</value>
-        [Required]
-        [DataMember(Name = "state", EmitDefaultValue = true)]
         public StateEnum State { get; set; }
 
         /// <summary>
         /// Hops visited in the past.
         /// </summary>
         /// <value>Hops visited in the past.</value>
-        [Required]
-        [DataMember(Name = "visitedHops", EmitDefaultValue = false)]
         public List<HopArrival> VisitedHops { get; set; }
 
         /// <summary>
         /// Hops coming up in the future - their times are estimations.
         /// </summary>
         /// <value>Hops coming up in the future - their times are estimations.</value>
-        [Required]
-        [DataMember(Name = "futureHops", EmitDefaultValue = false)]
         public List<HopArrival> FutureHops { get; set; }
 
         /// <summary>
         /// The tracking ID of the parcel. 
         /// </summary>
         /// <value>The tracking ID of the parcel. </value>
-        [RegularExpression("^[A-Z0-9]{9}$")]
-        [DataMember(Name = "trackingId", EmitDefaultValue = false)]
         public string TrackingId { get; set; }
     }
 }
