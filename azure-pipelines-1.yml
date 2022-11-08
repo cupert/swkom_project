@@ -43,7 +43,7 @@ steps:
   inputs:
     command: test
     projects: '*.Test/*.Test*.csproj'  
-    arguments: '--configuration $(BuildConfiguration) --collect "XPlat Code coverage" --RunConfiguration.DisableAppDomain=true --logger trx'
+    
     testRunTitle: UnitTests
 
 # Package the file and uploads them as an artifact of the build
