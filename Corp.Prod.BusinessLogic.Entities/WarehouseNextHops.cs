@@ -16,14 +16,12 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Corp.Prod.Area.Sub.Converters;
 
 namespace Corp.Prod.BusinessLogic.Entities
 { 
     /// <summary>
     /// 
     /// </summary>
-    [DataContract]
     public partial class WarehouseNextHops 
     {
         /// <summary>
