@@ -13,28 +13,28 @@ namespace Corp.Prod.Area.Sub.DTOs
     {
         public MapperProfile()
         {
-            CreateMap<GeoCoordinate, BusinessLogic.Entities.GeoCoordinate>()
+            CreateMap<GeoCoordinate, Corp.Prod.BusinessLogic.Entities.GeoCoordinate>()
                 .ReverseMap();
 
-            CreateMap<Hop, BusinessLogic.Entities.Hop>()
-                .Include<Transferwarehouse, BusinessLogic.Entities.Transferwarehouse>()
-                .Include<Truck, BusinessLogic.Entities.Truck>()
-                .Include<Warehouse, BusinessLogic.Entities.Warehouse>()
+            CreateMap<Hop, Prod.BusinessLogic.Entities.Hop>()
+                .Include<Transferwarehouse, Prod.BusinessLogic.Entities.Transferwarehouse>()
+                .Include<Truck, Prod.BusinessLogic.Entities.Truck>()
+                .Include<Warehouse, Prod.BusinessLogic.Entities.Warehouse>()
                 .ReverseMap();
 
-            CreateMap<Transferwarehouse, BusinessLogic.Entities.Transferwarehouse>()
+            CreateMap<Transferwarehouse, Prod.BusinessLogic.Entities.Transferwarehouse>()
                 .ReverseMap();
 
-            CreateMap<Truck, BusinessLogic.Entities.Truck>()
+            CreateMap<Truck, Prod.BusinessLogic.Entities.Truck>()
                 .ReverseMap();
 
-            CreateMap<Warehouse, BusinessLogic.Entities.Warehouse>()
+            CreateMap<Warehouse, Prod.BusinessLogic.Entities.Warehouse>()
                 .ReverseMap();
 
-            CreateMap<HopArrival, BusinessLogic.Entities.HopArrival>()
+            CreateMap<HopArrival, Prod.BusinessLogic.Entities.HopArrival>()
                 .ReverseMap();
 
-            CreateMap<Parcel, BusinessLogic.Entities.Parcel>()
+            CreateMap<Parcel, Prod.BusinessLogic.Entities.Parcel>()
                 .ForMember(destinationMember => destinationMember.Recipient, opt => opt.MapFrom(src => src.Recipient))
                 .ForMember(destinationMember => destinationMember.Weight, opt => opt.MapFrom(src => src.Weight))
                 .ForMember(destinationMember => destinationMember.Sender, opt => opt.MapFrom(src => src.Sender))
@@ -44,7 +44,7 @@ namespace Corp.Prod.Area.Sub.DTOs
                 .ForMember(destinationMember => destinationMember.FutureHops, opt => opt.Ignore())
                 .ReverseMap();
 
-            CreateMap<NewParcelInfo, BusinessLogic.Entities.Parcel>()
+            CreateMap<NewParcelInfo, Prod.BusinessLogic.Entities.Parcel>()
                 .ForMember(destinationMember => destinationMember.TrackingId, opt => opt.MapFrom(src => src.TrackingId))
                 .ForMember(destinationMember => destinationMember.Recipient, opt => opt.Ignore())
                 .ForMember(destinationMember => destinationMember.Weight, opt => opt.Ignore())
@@ -54,7 +54,7 @@ namespace Corp.Prod.Area.Sub.DTOs
                 .ForMember(destinationMember => destinationMember.FutureHops, opt => opt.Ignore())
                 .ReverseMap();
 
-            CreateMap<TrackingInformation, BusinessLogic.Entities.Parcel>()
+            CreateMap<TrackingInformation, Prod.BusinessLogic.Entities.Parcel>()
                 .ForMember(destinationMember => destinationMember.State, opt => opt.MapFrom(src => src.State))
                 .ForMember(destinationMember => destinationMember.VisitedHops, opt => opt.MapFrom(src => src.VisitedHops))
                 .ForMember(destinationMember => destinationMember.FutureHops, opt => opt.MapFrom(src => src.FutureHops))
@@ -64,11 +64,13 @@ namespace Corp.Prod.Area.Sub.DTOs
                 .ForMember(destinationMember => destinationMember.TrackingId, opt => opt.Ignore())
                 .ReverseMap();
 
-            CreateMap<Recipient, BusinessLogic.Entities.Recipient>()
+            CreateMap<Recipient, Prod.BusinessLogic.Entities.Recipient>()
                 .ReverseMap();           
 
-            CreateMap<WarehouseNextHops, BusinessLogic.Entities.WarehouseNextHops>()
+            CreateMap<WarehouseNextHops, Prod.BusinessLogic.Entities.WarehouseNextHops>()
                 .ReverseMap();
+
+
 
         }
     }
