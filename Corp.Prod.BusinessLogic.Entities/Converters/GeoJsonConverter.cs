@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Corp.Prod.Area.Sub.DTOs.Converters
+namespace Corp.Prod.BusinessLogic.Entities.Converters
 {
     internal class GeoJsonConverter :
         IValueConverter<string, NetTopologySuite.Geometries.Geometry>,
