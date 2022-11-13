@@ -9,11 +9,14 @@ using Corp.Prod.BusinessLogic.Entities.Converters;
 
 namespace Corp.Prod.BusinessLogic.Entities
 {
-    internal class MapperProfile : Profile
+    public class MapperProfile : Profile
     {
         public MapperProfile()
         {
             CreateMap<Hop, DataAccess.Entities.Hop>()
+                .Include<Transferwarehouse, DataAccess.Entities.Transferwarehouse>()
+                .Include<Warehouse, DataAccess.Entities.Warehouse>()
+                .Include<Truck, DataAccess.Entities.Truck>()
                 .ForMember(d => d.LocationCoordinates, opt => opt.ConvertUsing(new GeoPointConverter(), src => src.LocationCoordinates))
                 .ReverseMap();
 
