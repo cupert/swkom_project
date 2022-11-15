@@ -19,13 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corp.Prod.BusinessLogic.Ent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corp.Prod.Area.Sub.Tests", "Corp.Prod.Services.Tests\Corp.Prod.Area.Sub.Tests.csproj", "{43932574-3C48-4485-A726-99725BAFD198}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.Prod.Area.DataAccess.Entities", "Corp.Prod.Area.DataAccess.Entities\Corp.Prod.Area.DataAccess.Entities.csproj", "{2FE4303A-1E99-44A7-92B5-18E79D0990A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corp.Prod.DataAccess.Entities", "Corp.Prod.Area.DataAccess.Entities\Corp.Prod.DataAccess.Entities.csproj", "{2FE4303A-1E99-44A7-92B5-18E79D0990A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.Prod.Area.DataAccess.Interfaces", "Corp.Prod.Area.DataAccess.Interfaces\Corp.Prod.Area.DataAccess.Interfaces.csproj", "{646D5CF3-07C2-442A-8F20-111F5C2B4C83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corp.Prod.DataAccess.Interfaces", "Corp.Prod.Area.DataAccess.Interfaces\Corp.Prod.DataAccess.Interfaces.csproj", "{646D5CF3-07C2-442A-8F20-111F5C2B4C83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.Prod.Area.DataAccess.Sql", "Corp.Prod.Area.DataAccess.Sql\Corp.Prod.Area.DataAccess.Sql.csproj", "{9D7F13DE-3E81-48BD-A138-27FF687564F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corp.Prod.DataAccess.Sql", "Corp.Prod.Area.DataAccess.Sql\Corp.Prod.DataAccess.Sql.csproj", "{9D7F13DE-3E81-48BD-A138-27FF687564F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.Prod.Area.DataAccess.Tests", "Corp.Prod.Area.DataAccess.Tests\Corp.Prod.Area.DataAccess.Tests.csproj", "{68EBED72-5B83-4A20-8EDE-87B0B9F735FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corp.Prod.DataAccess.Tests", "Corp.Prod.Area.DataAccess.Tests\Corp.Prod.DataAccess.Tests.csproj", "{68EBED72-5B83-4A20-8EDE-87B0B9F735FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

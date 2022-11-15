@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Corp.Prod.Area.DataAccess.Entities\Corp.Prod.Area.DataAccess.Entities.csproj" />
+    <ProjectReference Include="..\Corp.Prod.Area.DataAccess.Entities\Corp.Prod.DataAccess.Entities.csproj" />
   </ItemGroup>
 
 </Project>

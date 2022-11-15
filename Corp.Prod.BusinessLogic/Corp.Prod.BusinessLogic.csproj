@@ -17,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Corp.Prod.Area.DataAccess.Entities\Corp.Prod.DataAccess.Entities.csproj" />
+    <ProjectReference Include="..\Corp.Prod.Area.DataAccess.Interfaces\Corp.Prod.DataAccess.Interfaces.csproj" />
     <ProjectReference Include="..\Corp.Prod.BusinessLogic.Entities\Corp.Prod.BusinessLogic.Entities.csproj" />
     <ProjectReference Include="..\Corp.Prod.BusinessLogic.Interfaces\Corp.Prod.BusinessLogic.Interfaces.csproj" />
   </ItemGroup>

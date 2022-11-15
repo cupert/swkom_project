@@ -23,6 +23,7 @@ namespace Corp.Prod.DataAccess.Entities
     /// </summary>
     public partial class Parcel
     {
+        public int Id { get; private set; }
         /// <summary>
         /// The tracking ID of the parcel. 
         /// </summary>
