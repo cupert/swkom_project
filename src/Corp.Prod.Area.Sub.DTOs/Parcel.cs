@@ -18,6 +18,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Corp.Prod.Area.Sub.Converters;
 using AutoMapper;
+using Microsoft.Extensions.Logging;
 
 namespace Corp.Prod.Area.Sub.DTOs
 { 
@@ -28,7 +29,12 @@ namespace Corp.Prod.Area.Sub.DTOs
     public partial class Parcel 
     {
         private readonly IMapper _mapper;
-        public Parcel(IMapper mapper) => _mapper = mapper;
+        private readonly ILogger<Parcel> _logger;
+        public Parcel(IMapper mapper, ILogger<Parcel> logger)
+        {
+            _mapper = mapper;
+            _logger = logger;
+        }
 
         /// <summary>
         /// Gets or Sets Weight

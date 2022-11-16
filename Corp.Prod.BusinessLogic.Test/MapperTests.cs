@@ -17,7 +17,10 @@ namespace Corp.Prod.BusinessLogic.Test
             {
                 cfg.AddProfile<MapperProfile>();
             });
-            configuration.AssertConfigurationIsValid();
+
+            IMapper mapper = new Mapper(configuration);
+
+            mapper.ConfigurationProvider.AssertConfigurationIsValid();
         }
     }
 }

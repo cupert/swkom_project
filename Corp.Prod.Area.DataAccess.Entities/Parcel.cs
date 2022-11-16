@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using Microsoft.Extensions.Logging;
 
 namespace Corp.Prod.DataAccess.Entities
 { 
@@ -23,6 +24,12 @@ namespace Corp.Prod.DataAccess.Entities
     /// </summary>
     public partial class Parcel
     {
+        private readonly ILogger<Parcel> _logger;
+
+        public Parcel(ILogger<Parcel> logger)
+        {
+            _logger = logger;
+        }
         public int Id { get; private set; }
         /// <summary>
         /// The tracking ID of the parcel. 

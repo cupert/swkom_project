@@ -17,6 +17,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Corp.Prod.Area.Sub.Converters;
+using Microsoft.Extensions.Logging;
 
 namespace Corp.Prod.Area.Sub.DTOs
 { 

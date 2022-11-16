@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using Corp.Prod.Area.BusinessLogic.Entities.Converters;
 using Corp.Prod.BusinessLogic.Entities.Converters;
 
 namespace Corp.Prod.BusinessLogic.Entities
@@ -24,6 +23,7 @@ namespace Corp.Prod.BusinessLogic.Entities
                 .ReverseMap();
 
             CreateMap<Parcel, DataAccess.Entities.Parcel>()
+                .ForMember(d => d.Id, opt => opt.Ignore())
                 .ReverseMap();
 
             CreateMap<Recipient, DataAccess.Entities.Recipient>()
@@ -38,6 +38,7 @@ namespace Corp.Prod.BusinessLogic.Entities
                 .ReverseMap();
 
             CreateMap<Warehouse, DataAccess.Entities.Warehouse>()
+                .ForMember(d => d.Id, opt => opt.Ignore())
                 .ReverseMap();
 
             CreateMap<WarehouseNextHops, DataAccess.Entities.WarehouseNextHops>()

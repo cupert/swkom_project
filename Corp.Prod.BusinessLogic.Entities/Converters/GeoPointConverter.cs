@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using NetTopologySuite.Geometries;
 using Corp.Prod.BusinessLogic.Entities;
 
-namespace Corp.Prod.Area.BusinessLogic.Entities.Converters
+namespace Corp.Prod.BusinessLogic.Entities.Converters
 {
     internal class GeoPointConverter : 
     IValueConverter<GeoCoordinate, NetTopologySuite.Geometries.Point>,

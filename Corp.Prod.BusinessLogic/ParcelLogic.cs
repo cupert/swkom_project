@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Corp.Prod.DataAccess.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace Corp.Prod.BusinessLogic
 {
@@ -17,11 +18,13 @@ namespace Corp.Prod.BusinessLogic
         Parcel _parcel { get; set; }
         IMapper _mapper;
         IParcelRepository _repo;
+        private readonly ILogger<ParcelLogic> _logger;
 
-        public ParcelLogic(IMapper mapper, IParcelRepository repo)
+        public ParcelLogic(IMapper mapper, IParcelRepository repo, ILogger<ParcelLogic> logger)
         {
             _repo = repo;
             _mapper = mapper;
+            _logger = logger;
 
             ParcelValidator validator = new();
             ValidationResult result = validator.Validate(_parcel);
@@ -29,6 +32,7 @@ namespace Corp.Prod.BusinessLogic
 
         public void UpdateParcel()
         {
+            _logger.LogInformation($"Updating Parcel {_parcel.TrackingId}");
             DataAccess.Entities.Parcel p = _mapper.Map<DataAccess.Entities.Parcel>(_parcel);
             _repo.Update(p);
         }
