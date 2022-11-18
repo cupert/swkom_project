@@ -24,12 +24,6 @@ namespace Corp.Prod.DataAccess.Entities
     /// </summary>
     public partial class Parcel
     {
-        private readonly ILogger<Parcel> _logger;
-
-        public Parcel(ILogger<Parcel> logger)
-        {
-            _logger = logger;
-        }
         public int Id { get; private set; }
         /// <summary>
         /// The tracking ID of the parcel. 
