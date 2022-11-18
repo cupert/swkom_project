@@ -28,13 +28,6 @@ namespace Corp.Prod.Area.Sub.DTOs
     [DataContract]
     public partial class Parcel 
     {
-        private readonly IMapper _mapper;
-        private readonly ILogger<Parcel> _logger;
-        public Parcel(IMapper mapper, ILogger<Parcel> logger)
-        {
-            _mapper = mapper;
-            _logger = logger;
-        }
 
         /// <summary>
         /// Gets or Sets Weight
