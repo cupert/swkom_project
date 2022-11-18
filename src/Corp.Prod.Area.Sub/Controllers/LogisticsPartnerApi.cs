@@ -19,6 +19,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using Corp.Prod.Area.Sub.Attributes;
 using Corp.Prod.Area.Sub.DTOs;
+using AutoMapper;
 
 namespace Corp.Prod.Area.Sub.Controllers
 { 
@@ -27,7 +28,7 @@ namespace Corp.Prod.Area.Sub.Controllers
     /// </summary>
     [ApiController]
     public class LogisticsPartnerApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Transfer an existing parcel into the system from the service of a logistics partner. 
         /// </summary>

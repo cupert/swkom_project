@@ -13,10 +13,13 @@
     <PackageReference Include="FluentValidation" Version="11.2.2" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
     <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Corp.Prod.Area.DataAccess.Entities\Corp.Prod.DataAccess.Entities.csproj" />
+    <ProjectReference Include="..\Corp.Prod.Area.DataAccess.Interfaces\Corp.Prod.DataAccess.Interfaces.csproj" />
     <ProjectReference Include="..\Corp.Prod.BusinessLogic.Entities\Corp.Prod.BusinessLogic.Entities.csproj" />
     <ProjectReference Include="..\Corp.Prod.BusinessLogic.Interfaces\Corp.Prod.BusinessLogic.Interfaces.csproj" />
   </ItemGroup>

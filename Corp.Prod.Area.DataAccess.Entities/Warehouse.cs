@@ -18,11 +18,9 @@ using System.Runtime.Serialization;
 
 namespace Corp.Prod.DataAccess.Entities
 { 
-    /// <summary>
-    /// 
-    /// </summary>
     public partial class Warehouse : Hop
     {
+        public int Id { get; private set; }
         /// <summary>
         /// Gets or Sets Level
         /// </summary>
