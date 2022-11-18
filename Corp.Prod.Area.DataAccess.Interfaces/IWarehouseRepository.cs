@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Corp.Prod.DataAccess.Interfaces
 {
-    internal interface IWarehouseRepository
+    public interface IWarehouseRepository
     {
     }
 }
