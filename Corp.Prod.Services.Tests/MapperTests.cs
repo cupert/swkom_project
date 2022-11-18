@@ -16,7 +16,9 @@ namespace Corp.Prod.Area.Sub.Tests
             var configuration = new MapperConfiguration(cfg => { 
                 cfg.AddProfile<DTOs.MapperProfile>();
             });
-            configuration.AssertConfigurationIsValid();
+
+            IMapper mapper = new Mapper(configuration);
+            mapper.ConfigurationProvider.AssertConfigurationIsValid();
         }
     }
 }
