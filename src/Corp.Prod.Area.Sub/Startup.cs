@@ -102,7 +102,7 @@ namespace Corp.Prod.Area.Sub
                     .AddSwaggerGenNewtonsoftSupport();
 
             services
-                .AddAutoMapper(typeof(DTOs.MapperProfile));
+                .AddAutoMapper(typeof(Startup));
         }
 
         /// <summary>
